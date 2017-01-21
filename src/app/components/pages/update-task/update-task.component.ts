@@ -7,4 +7,4 @@ import '../../public/css/styles.css';
   styleUrls: ['app/components/pages/update-task/update-task.component.css']
 })
 
-export class AppComponent { }
+export class UpdateTaskComponent { }

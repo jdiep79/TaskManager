@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+
 import { AllTaskComponent } from './components/pages/all-task/all-task.component';
 import { UserTaskComponent } from './components/pages/user-task/user-task.component';
 import { UpdateTaskComponent } from './components/pages/update-task/update-task.component';
@@ -23,7 +24,10 @@ import { UpdateTaskComponent } from './components/pages/update-task/update-task.
     ])
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    UserTaskComponent,
+    AllTaskComponent,
+    UpdateTaskComponent
   ],
   bootstrap: [ AppComponent ]
 })

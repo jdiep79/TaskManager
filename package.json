@@ -1,0 +1,23 @@
+{
+  "name": "taskmanager",
+  "version": "0.0.1",
+  "description": "Application will manage task between users",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdiep79/TaskManager.git"
+  },
+  "keywords": [
+    "task",
+    "todo"
+  ],
+  "author": "Jimmy Diep",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdiep79/TaskManager/issues"
+  },
+  "homepage": "https://github.com/jdiep79/TaskManager#readme"
+}

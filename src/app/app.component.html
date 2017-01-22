@@ -1,13 +1,18 @@
- <main>
-  <nav>
-    <div>
-      <ul>
-        <li><a [routerLink]="['/mytask']">My Task</a></li>
-        <li><a [routerLink]="['/task']">All Task</a></li>
-      </ul>
+ <div>
+   
+  <header>
+    <div class="logo">
+      <h1>TaskManager</h1>
     </div>
-  </nav>
-  <div class='container'>
-      <router-outlet></router-outlet>
-  </div>
-</main>
+   <nav>
+      <a [routerLink]="['/mytask']">My Task</a>
+      <a [routerLink]="['/task']">All Task</a>
+   </nav>
+  </header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+
+</div>
+
+

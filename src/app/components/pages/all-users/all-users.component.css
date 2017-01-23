@@ -36,13 +36,9 @@ table th {
   text-transform: uppercase;
 }
 
-th.user,
-th.name {
-  width: 20%;
-}
-
-th.task {
-  width: 60%;
+td[data-label="Assigned Task"] {
+  white-space: pre-wrap; 
+  word-wrap:break-word;
 }
 
 @media screen and (max-width: 600px) {

@@ -17,10 +17,10 @@ export class AllTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this._taskService.getUsers()
-      .subscribe(users => this.matchUsersToTask(users))
+      .subscribe(users => this._matchUsersToTask(users))
   }
   
-  private matchUsersToTask(users): void {
+  private _matchUsersToTask(users): void {
     this._taskService.getTasks()
      .subscribe(tasks => {
        tasks.forEach(task => {

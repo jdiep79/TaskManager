@@ -16,7 +16,7 @@
         <td data-label="Description">{{ task.description }}</td>
         <td data-label="Summary">{{ task.summary }}</td>
         <td data-label="Status">{{ task.status | taskStatusFilter }}</td>
-        <td data-label="Assigned Users">{{ task.users }}</td>
+        <td data-label="Assigned Users">{{ task.users | newlineFilter }}</td>
         <td data-label="Start Date">{{ task.start_date | date:'medium' }}</td>
         <td data-label="End Date">{{ task.end_date | date:'medium' }}</td>
       </tr>

@@ -36,7 +36,7 @@ table th {
   text-transform: uppercase;
 }
 
-td[data-label="Assigned Users"] {
+td[data-label="Assigned Task"] {
   white-space: pre-wrap; 
   word-wrap:break-word;
 }

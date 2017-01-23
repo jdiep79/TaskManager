@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { AllTaskComponent } from './components/pages/all-task/all-task.component';
 import { UserTaskComponent } from './components/pages/user-task/user-task.component';
 import { UpdateTaskComponent } from './components/pages/update-task/update-task.component';
+import { AllUsersComponent } from './components/pages/all-users/all-users.component';
 
 import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
+import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
 
 @NgModule({
   imports: [
@@ -20,6 +22,7 @@ import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
       { path: 'mytask', component: UserTaskComponent },
       { path: 'task', component: AllTaskComponent },
       { path: 'task/:id', component: UpdateTaskComponent },
+      { path: 'allusers', component: AllUsersComponent },
       { path: '', redirectTo: 'mytask', pathMatch: 'full'},
       { path: '**', redirectTo: 'mytask', pathMatch: 'full' }
     ])
@@ -29,7 +32,9 @@ import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
     UserTaskComponent,
     AllTaskComponent,
     UpdateTaskComponent,
-    TaskStatusFilterPipe
+    AllUsersComponent,
+    TaskStatusFilterPipe,
+    NewLineFilterPipe
   ],
   bootstrap: [ AppComponent ]
 })

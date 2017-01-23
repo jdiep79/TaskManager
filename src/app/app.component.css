@@ -22,11 +22,7 @@ header {
   transform: translateY(-50%);
 }
 
-.log h1 {
-  font-size: 1.5em;
-  font-weight: 100;
-  font-style: italic;
-}
+
 
 nav a {
   color: #fff;
@@ -44,7 +40,5 @@ nav span {
 
 
 @media screen and (max-width: 920px) {
-  header {
-    background-color: #00B0FF;;
-  }
+
 }

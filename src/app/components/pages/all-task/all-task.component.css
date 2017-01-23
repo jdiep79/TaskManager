@@ -36,6 +36,11 @@ table th {
   text-transform: uppercase;
 }
 
+td[data-label="Assigned Users"] {
+  white-space: pre-wrap; 
+  word-wrap:break-word;
+}
+
 @media screen and (max-width: 600px) {
   
   table {

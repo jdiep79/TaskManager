@@ -1,0 +1,17 @@
+<main class="container">
+  <h1>All Users</h1>
+  <table>
+    <thead>
+      <th scope="col" class="user">User ID</th>
+      <th scope="col" class="name">Name</th>
+      <th scope="col" class="task">Assigned Task</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td data-label="User ID">{{ user._id }}</td>
+        <td data-label="Name">{{ user.name }}</td>
+        <td data-label="Assigned Task">{{ user.jobs }}</td>
+      </tr>
+    </tbody>
+  </table>
+</main>

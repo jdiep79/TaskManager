@@ -11,6 +11,7 @@ import { UpdateTaskComponent } from './components/pages/update-task/update-task.
 import { AllUsersComponent } from './components/pages/all-users/all-users.component';
 
 import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
+import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
     AllTaskComponent,
     UpdateTaskComponent,
     AllUsersComponent,
-    TaskStatusFilterPipe
+    TaskStatusFilterPipe,
+    NewLineFilterPipe
   ],
   bootstrap: [ AppComponent ]
 })

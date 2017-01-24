@@ -16,6 +16,7 @@ import { TaskService } from '../../../services/task.service';
 export class UpdateTaskComponent implements OnInit { 
   task: TaskInterface;
   errorMessage: string;
+  updateMessage: string;
   private sub: Subscription;
 
   constructor(
@@ -34,16 +35,17 @@ export class UpdateTaskComponent implements OnInit {
    getTask(id: number) {
       this._taskService.getTask(id)
         .subscribe(
-        task => {
-          console.log('taskID!!!', task)
-          task.summary = "whatever!!"
-          this._taskService.updateTask(task)
-            .subscribe(
-              (message) => { console.log('updatemessage!', message)}
-            )
-        },
+        task => this.task = task,
         error => this.errorMessage = <any>error
       );
+    }
+  
+    updateTask(id: number) {
+      this._taskService.updateTask(task)
+        .subscribe(
+         message => this.updateMessage = message.status,
+         error => this.errorMessage = <any>error
+        )
     }
 
 }

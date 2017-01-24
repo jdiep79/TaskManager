@@ -1,17 +1,20 @@
  <div>
-   
+  
+  <!--  Header shared between all pages-->
   <header>
     <div class="logo">
       <h1>TaskManager</h1>
     </div>
-   <nav>
+    <nav>
       <span>Manage Task</span>
       <a [routerLink]="['/mytask']">My Tasks</a>
       <a [routerLink]="['/task']">All Tasks</a>
       <span>Manage User</span>
       <a [routerLink]="['/allusers']">All Users</a>
-   </nav>
+    </nav>
   </header>
+  
+  <!-- pages -->
   <section>
     <router-outlet></router-outlet>
   </section>

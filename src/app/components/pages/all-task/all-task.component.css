@@ -1,3 +1,10 @@
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+
 h1 { 
   display: inline-block;
   font-size: 1.6em; 
@@ -5,6 +12,12 @@ h1 {
   letter-spacing: 1px;
   padding: .8em;
 }
+
+/*
+  ========================================
+  Table
+  ========================================
+*/
 
 table {
   border: 1px solid #ccc;
@@ -41,6 +54,12 @@ td[data-label="Assigned Users"] {
   white-space: pre-wrap; 
   word-wrap:break-word;
 }
+
+/*
+  ========================================
+  Button
+  ========================================
+*/
 
 .button {        
   float: right;
@@ -94,7 +113,22 @@ td[data-label="Assigned Users"] {
   content: "\271A";
 }
 
+.editbtn {
+  padding: 8px 30px;
+  color: #fff;
+  background-color: #00B0FF;
+  border: 0;
+}
+
+/*
+  ========================================
+  Responsive
+  ========================================
+*/
+
 @media screen and (max-width: 600px) {
+  
+  /*  table */
   
   table {
     border: 0;

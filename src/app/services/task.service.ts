@@ -50,12 +50,10 @@ export class TaskService {
     updateTask(task: TaskInterface): Observable<TaskInterface> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        
-        console.log('hit!!');
+
         const url = `${this._taskUrl}/${task._id}`;
         return this._http.post(url, task, options)
             .map((response: Response) => <any> response.json())
-            .do(data => console.log('updateProduct: ' + JSON.stringify(data)))
             .catch(this._handleError);
     }
     

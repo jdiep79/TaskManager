@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -10,6 +10,8 @@ import { UserTaskComponent } from './components/pages/user-task/user-task.compon
 import { UpdateTaskComponent } from './components/pages/update-task/update-task.component';
 import { AllUsersComponent } from './components/pages/all-users/all-users.component';
 
+import { AddTaskComponent } from './components/shared/add-task/add-task.component';
+
 import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
 import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
 
@@ -17,10 +19,12 @@ import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot([
       { path: 'mytask', component: UserTaskComponent },
       { path: 'task', component: AllTaskComponent },
+      { path: 'addtask', component: AddTaskComponent },
       { path: 'task/:id', component: UpdateTaskComponent },
       { path: 'allusers', component: AllUsersComponent },
       { path: '', redirectTo: 'mytask', pathMatch: 'full'},
@@ -31,10 +35,11 @@ import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
     AppComponent,
     UserTaskComponent,
     AllTaskComponent,
+    AddTaskComponent,
     UpdateTaskComponent,
     AllUsersComponent,
     TaskStatusFilterPipe,
-    NewLineFilterPipe
+    NewLineFilterPipe,
   ],
   bootstrap: [ AppComponent ]
 })

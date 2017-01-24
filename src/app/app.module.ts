@@ -7,10 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { AllTaskComponent } from './components/pages/all-task/all-task.component';
 import { UserTaskComponent } from './components/pages/user-task/user-task.component';
-import { UpdateTaskComponent } from './components/pages/update-task/update-task.component';
-import { AllUsersComponent } from './components/pages/all-users/all-users.component';
-
 import { AddTaskComponent } from './components/shared/add-task/add-task.component';
+import { UpdateTaskComponent } from './components/shared/update-task/update-task.component';
+import { AllUsersComponent } from './components/pages/all-users/all-users.component';
 
 import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
 import { NewLineFilterPipe } from './pipes/newline-filter.pipe';

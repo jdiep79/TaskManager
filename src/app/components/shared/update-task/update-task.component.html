@@ -1,0 +1,36 @@
+<main class="container">
+ 
+  <section>
+    <h1>Update Task</h1>
+  </section>
+  
+  <section>
+    <form [formGroup]="taskForm" (ngSubmit)="updateTask()">
+      <div>
+        <label>Task Name</label>
+        <input type="text" placeholder="Task Name (required)" formControlName="summary">
+      </div>
+      <div>
+        <label>Task Description</label>
+        <input type="text"  placeholder="Task Description (required)" formControlName="description">
+      </div>
+      <div>
+        <label>Task Status</label>
+        <input type="text"  placeholder="Task Description (required)" formControlName="status">
+      </div> 
+      <div>
+        <label>State Date</label>
+        <input type="text"  placeholder="Task Status (required)" formControlName="start_date">
+      </div>
+      <div>
+        <label>End Date</label>
+        <input type="text" placeholder="Task Status (required)" formControlName="end_date">
+      </div>
+      <div>
+        <button [routerLink]="['/task']" class="button back" >Back</button>
+        <button class="button update" type="submit" [disabled]=!taskForm.valid>Update</button>
+      </div>
+    </form>
+  </section>
+  
+</main>

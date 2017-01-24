@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 
@@ -16,7 +17,10 @@ export class UserTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this._taskService.getUsers()
-      .subscribe(users => this._matchUsersToTask(users))
+      .subscribe(
+        users => this._matchUsersToTask(users),
+        error => this.errorMessage = <any>error
+      )
   }
 
   private _filterUserTickets(tasks: TaskInterface[]): TaskInterface[] {
@@ -25,7 +29,6 @@ export class UserTaskComponent implements OnInit {
       return task.users
         .toLowerCase()
         .includes(this.user.toLowerCase());
-  
     });
   }
   

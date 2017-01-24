@@ -1,28 +1,35 @@
 <main class="container">
-  <h1>All Task</h1>
-  <a [routerLink]="['/addtask']" class="button add">Add Task</a>
-  <table>
-    <thead>
-      <th scope="col">Task ID</th>
-      <th scope="col">Description</th>
-      <th scope="col">Summary</th>
-      <th scope="col">Status</th>
-      <th scope="col">Assigned Users</th>
-      <th scope="col">Start Date</th>
-      <th scope="col">End Date</th>
-      <th scope="col">Edit Task</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let task of tasks">
-        <td data-label="Task ID">{{ task._id }}</td>
-        <td data-label="Description">{{ task.description }}</td>
-        <td data-label="Summary">{{ task.summary }}</td>
-        <td data-label="Status">{{ task.status | taskStatusFilter }}</td>
-        <td data-label="Assigned Users">{{ task.users | newlineFilter }}</td>
-        <td data-label="Start Date">{{ task.start_date | date:'medium' }}</td>
-        <td data-label="End Date">{{ task.end_date | date:'medium' }}</td>
-        <td><a [routerLink]="['/task', task._id]">Edit</a></td>
-      </tr>
-    </tbody>
-  </table>
+  
+   <section>
+      <h1>All Task</h1>
+      <a [routerLink]="['/addtask']" class="button add">Add Task</a>
+   </section>
+   
+   <section>
+    <table>
+      <thead>
+        <th scope="col">Task ID</th>
+        <th scope="col">Description</th>
+        <th scope="col">Summary</th>
+        <th scope="col">Status</th>
+        <th scope="col">Assigned Users</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Edit Task</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td data-label="Task ID">{{ task._id }}</td>
+          <td data-label="Description">{{ task.description }}</td>
+          <td data-label="Summary">{{ task.summary }}</td>
+          <td data-label="Status">{{ task.status | taskStatusFilter }}</td>
+          <td data-label="Assigned Users">{{ task.users | newlineFilter }}</td>
+          <td data-label="Start Date">{{ task.start_date | date:'medium' }}</td>
+          <td data-label="End Date">{{ task.end_date | date:'medium' }}</td>
+          <td><button class='editbtn' [routerLink]="['/task', task._id]">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  
 </main>

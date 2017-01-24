@@ -16,7 +16,10 @@ export class AllTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this._taskService.getUsers()
-      .subscribe(users => this._matchUsersToTask(users))
+      .subscribe(
+        users => this._matchUsersToTask(users),
+        error => this.errorMessage = <any>error
+      );
   }
   
   private _matchUsersToTask(users): void {
@@ -29,7 +32,9 @@ export class AllTaskComponent implements OnInit {
                `${task.users}, ${user.name}`;
            }
          })
-       })
+       },
+       error => this.errorMessage = <any>error
+       )
        this.tasks = tasks;
      });
   }

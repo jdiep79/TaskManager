@@ -4,7 +4,6 @@ import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 
 @Component({
-  selector: 'my-app',
   templateUrl: 'all-task.component.html',
   styleUrls: ['all-task.component.css']
 })

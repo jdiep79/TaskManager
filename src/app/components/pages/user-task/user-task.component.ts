@@ -3,7 +3,6 @@ import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 
 @Component({
-  selector: 'my-app',
   templateUrl: 'user-task.component.html',
   styleUrls: ['user-task.component.css']
 })

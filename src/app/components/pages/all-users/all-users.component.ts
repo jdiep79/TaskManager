@@ -16,6 +16,9 @@ export class AllUsersComponent implements OnInit {
 
   ngOnInit(): void {
     this._taskService.getUsers()
-      .subscribe(users => this.users = users)
+      .subscribe(
+        users => this.users = users,
+        error => this.errorMessage = <any>error
+    );
   }
 }

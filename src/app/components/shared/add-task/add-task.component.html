@@ -1,8 +1,13 @@
 <main class="container">
-  <h1>Add Task</h1>
-  <form [formGroup]="taskForm" (ngSubmit)="save()">
-    <div>
-      <label>Task Name</label>
+ 
+  <section>
+    <h1>Add Task</h1>
+  </section>
+  
+  <section>
+    <form [formGroup]="taskForm" (ngSubmit)="save()">
+      <div>
+        <label>Task Name</label>
         <input type="text" placeholder="Task Name (required)" formControlName="summary">
       </div>
       <div>
@@ -13,5 +18,7 @@
         <button [routerLink]="['/task']" class="button back" >Back</button>
         <button class="button save" type="submit" [disabled]=!taskForm.valid>Save</button>
       </div>
-  </form>
+    </form>
+  </section>
+  
 </main>

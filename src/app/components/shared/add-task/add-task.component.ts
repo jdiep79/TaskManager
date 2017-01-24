@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Task } from './task';
 
 @Component({
@@ -18,31 +19,35 @@ export class AddTaskComponent implements OnInit {
   
   constructor(
     private _fb: FormBuilder,
-    private _taskService: TaskService
+    private _taskService: TaskService,
+    private _router: Router
   ) { }
   
   ngOnInit(): void {
-     this.taskForm = this._fb.group({
-        summary: '',
-        description: '',
-     });
+    this._createForm();
   }
-  
-  save() {
+    
+  save(): void {
     this.task.summary = this.taskForm.get('summary').value;
     this.task.description = this.taskForm.get('description').value;
     this._taskService.addTask(this.task)
       .subscribe(
-        () => this.onSaveComplete(),
-        (error: any) => {
-          this.errorMessage = <any>error
-          console.log('error!!', this.errorMessage)
-        }
+        (message) => this._onSaveComplete(message),
+        (error: any) => this.errorMessage = <any>error
       );
   }
   
-  onSaveComplete(message: any): void {
+  private _onSaveComplete(message: any): void {
+    console.log(message);
     this.taskForm.reset();
+    this._router.navigate(['/task']);
+  }
+  
+  private _createForm(): void {
+   this.taskForm = this._fb.group({
+     summary: '',
+     description: '',
+   });
   }
  
 }

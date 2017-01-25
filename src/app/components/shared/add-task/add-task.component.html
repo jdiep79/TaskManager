@@ -15,7 +15,7 @@
         <input type="text"  placeholder="Task Description (required)" formControlName="description">
       </div>
       <div>
-        <button [routerLink]="['/task']" class="button back" >Back</button>
+        <button (click)="goBackToPreviousPage()" class="button back" >Back</button>
         <button class="button save" type="submit" [disabled]=!taskForm.valid>Save</button>
       </div>
     </form>

@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { Subscription } from 'rxjs/Subscription';
 
@@ -24,7 +25,7 @@ export class UpdateTaskComponent implements OnInit, OnDestroy {
 
   constructor(
     private _route: ActivatedRoute,
-    private _router: Router,
+    private _location: Location,
     private _taskService: TaskService,
     private _fb: FormBuilder,
   ){}
@@ -76,7 +77,12 @@ export class UpdateTaskComponent implements OnInit, OnDestroy {
   
   private _onUpdateComplete(): void {
     this.taskForm.reset();
-    this._router.navigate(['/task']);
+    this.goBackToPreviousPage();
+    
+  }
+  
+  goBackToPreviousPage(): void {
+    this._location.back();
   }
 
   updateTask(): void {

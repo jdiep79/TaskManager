@@ -1,0 +1,20 @@
+<main class="container">
+ 
+  <section>
+    <h1>Assign Task</h1>
+  </section>
+  
+  <section>
+    <form [formGroup]="taskForm" (ngSubmit)="assignJob()">
+      <div>
+        <label>Task ID</label>
+        <input type="text" placeholder="Task ID (required)" formControlName=taskID>
+      </div>
+       <div>
+        <button (click)="goBackToPreviousPage()" class="button back" >Back</button>
+        <button class="button assign" type="submit" [disabled]=!taskForm.valid>Assign Task</button>
+      </div>
+    </form>
+  </section>
+  
+</main>

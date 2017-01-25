@@ -11,6 +11,7 @@ h1 {
   font-weight: 500; 
   letter-spacing: 1px;
   padding: .8em;
+  margin-top: 50px;
 }
 
 /*
@@ -70,6 +71,7 @@ td[data-label="Assigned Task"] {
   border: 1px solid #777;
   padding: 0 1.5em;
   margin: 0.5em;
+  margin-top: 65px;
   font: bold 1em/2em Arial, Helvetica;
   text-decoration: none;
   color: #333;

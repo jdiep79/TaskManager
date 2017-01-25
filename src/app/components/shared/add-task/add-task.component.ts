@@ -40,7 +40,7 @@ export class AddTaskComponent implements OnInit {
   private _onSaveComplete(message: any): void {
     console.log(message);
     this.taskForm.reset();
-    this._goBackToPreviousPage();
+    this.goBackToPreviousPage();
   }
   
   goBackToPreviousPage(): void {

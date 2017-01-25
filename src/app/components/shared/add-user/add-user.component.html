@@ -1,0 +1,20 @@
+<main class="container">
+ 
+  <section>
+    <h1>Add User</h1>
+  </section>
+  
+  <section>
+    <form [formGroup]="userForm" (ngSubmit)="save()">
+      <div>
+        <label>Username</label>
+        <input type="text" placeholder="Username (required)" formControlName="name">
+      </div>
+      <div>
+        <button (click)="goBackToPreviousPage()" class="button back" >Back</button>
+        <button class="button save" type="submit" [disabled]=!userForm.valid>Save</button>
+      </div>
+    </form>
+  </section>
+  
+</main>

@@ -56,6 +56,15 @@ export class TaskService {
       .map((response: Response) => <UserInterface[]> response.json())
       .catch(this._handleError);
   }
+  
+  addUser(user: any): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this._http.post(this._userUrl, user, options)
+      .map((response: Response) => <any> response.json())
+      .catch(this._handleError);
+  }
     
   private _handleError(error: Response) {
     return Observable.throw(error.json().error || 'Server error');

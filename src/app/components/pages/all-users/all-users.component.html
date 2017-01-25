@@ -11,12 +11,14 @@
         <th scope="col">User ID</th>
         <th scope="col">Name</th>
         <th scope="col">Assigned Task</th>
+        <th scope="col">Assign Task</th>
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
           <td data-label="User ID">{{ user._id }}</td>
           <td data-label="Name">{{ user.name }}</td>
           <td data-label="Assigned Task">{{ user.jobs | newlineFilter }}</td>
+          <td><button class='editbtn' [routerLink]="['/allusers', user._id]">Assign Task</button></td>
         </tr>
       </tbody>
     </table>

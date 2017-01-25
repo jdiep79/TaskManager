@@ -2,6 +2,7 @@
   
   <section>
     <h1>My Tasks</h1>
+    <a [routerLink]="['/addtask']" class="button add">Add Task</a>
   </section>
   
   <section>
@@ -14,6 +15,7 @@
         <th scope="col">Assigned Users</th>
         <th scope="col">Start Date</th>
         <th scope="col">End Date</th>
+        <th scope="col">Edit Task</th>
       </thead>
       <tbody>
         <tr *ngFor="let task of tasks">
@@ -24,6 +26,7 @@
           <td data-label="Assigned Users">{{ task.users | newlineFilter }}</td>
           <td data-label="Start Date">{{ task.start_date | date:'medium' }}</td>
           <td data-label="End Date">{{ task.end_date | date:'medium' }}</td>
+           <td><button class='editbtn' [routerLink]="['/task', task._id]">Edit</button></td>
         </tr>
       </tbody>
     </table>

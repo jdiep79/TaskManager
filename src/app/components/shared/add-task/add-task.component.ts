@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
@@ -20,7 +20,7 @@ export class AddTaskComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _taskService: TaskService,
-    private _router: Router
+    private _location: Location
   ) { }
   
   ngOnInit(): void {
@@ -40,7 +40,11 @@ export class AddTaskComponent implements OnInit {
   private _onSaveComplete(message: any): void {
     console.log(message);
     this.taskForm.reset();
-    this._router.navigate(['/task']);
+    this._goBackToPreviousPage();
+  }
+  
+  goBackToPreviousPage(): void {
+    this._location.back();
   }
   
   private _createForm(): void {

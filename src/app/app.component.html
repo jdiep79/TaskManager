@@ -1,21 +1,20 @@
  <div>
   
   <!--  Header shared between all pages-->
-  <header>
-    <div class="logo">
-      <h1>TaskManager</h1>
-    </div>
-    <nav>
-      <span>Manage Task</span>
-      <a [routerLink]="['/mytask']">My Tasks</a>
-      <a [routerLink]="['/task']">All Tasks</a>
-      <span>Manage User</span>
-      <a [routerLink]="['/allusers']">All Users</a>
-    </nav>
+  <header class="header">
+    <a href="/" class="logo">TaskManager</a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
+      <li><a class="section">Manage Task</a></li>
+      <li><a [routerLink]="['/mytask']">My Tasks</a></li>
+      <li><a [routerLink]="['/task']">All Tasks</a></li>
+      <li><a [routerLink]="['/allusers']">All Users</a></li>
+    </ul>
   </header>
   
   <!-- pages -->
-  <section>
+  <section class="routes">
     <router-outlet></router-outlet>
   </section>
 

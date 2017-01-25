@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { TaskInterface } from '../../../interfaces/task.interface';
 import { TaskService } from '../../../services/task.service';
 

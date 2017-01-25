@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
-import { TaskInterface } from '../../../interfaces/task.interface';
+import { UserInterface } from '../../../interfaces/user.interface';
 import { TaskService } from '../../../services/task.service';
 
-import { Task } from './task';
+import { User } from './user';
 
 @Component({
-  templateUrl: 'add-task.component.html',
-  styleUrls: ['add-task.component.css']
+  templateUrl: 'add-user.component.html',
+  styleUrls: ['add-user.component.css']
 })
 
-export class AddTaskComponent implements OnInit { 
-  taskForm: FormGroup;
-  task: Task = new Task();
+export class AddUserComponent { 
+  userForm: FormGroup;
+  user: User = new User();
   errorMessage: string;
   
   constructor(
     private _fb: FormBuilder,
     private _taskService: TaskService,
-    private _location: Location
+    private router: Router
   ) { }
   
   ngOnInit(): void {
@@ -28,9 +28,8 @@ export class AddTaskComponent implements OnInit {
   }
     
   save(): void {
-    this.task.summary = this.taskForm.get('summary').value;
-    this.task.description = this.taskForm.get('description').value;
-    this._taskService.addTask(this.task)
+    this.user.name = this.userForm.get('name').value;
+    this._taskService.addUser(this.user)
       .subscribe(
         (message) => this._onSaveComplete(message),
         (error: any) => this.errorMessage = <any>error
@@ -39,24 +38,21 @@ export class AddTaskComponent implements OnInit {
   
   private _onSaveComplete(message: any): void {
     console.log(message);
-    this.taskForm.reset();
+    this.userForm.reset();
     this.goBackToPreviousPage();
   }
   
   goBackToPreviousPage(): void {
-    this._location.back();
+    this.router.navigate(['/allusers']);
   }
   
   private _createForm(): void {
-   this.taskForm = this._fb.group({
-     summary: '',
-     description: '',
+   this.userForm = this._fb.group({
+     name: ''
    });
   }
  
 }
-
-
 
 
 

@@ -36,14 +36,14 @@ export class AddUserComponent {
       );
   }
   
+  goBackToPreviousPage(): void {
+    this.router.navigate(['/allusers']);
+  }
+  
   private _onSaveComplete(message: any): void {
     console.log(message);
     this.userForm.reset();
     this.goBackToPreviousPage();
-  }
-  
-  goBackToPreviousPage(): void {
-    this.router.navigate(['/allusers']);
   }
   
   private _createForm(): void {

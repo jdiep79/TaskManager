@@ -14,6 +14,7 @@ import { UserInterface } from '../interfaces/user.interface';
 export class TaskService {
   private _taskUrl = 'http://interview.lenderprice.com:7070/api/jobs';
   private _userUrl = 'http://interview.lenderprice.com:7070/api/assignee';
+  private _jobUrl = 'http://interview.lenderprice.com:7070/api/assignjob'
   
   constructor(private _http: Http) {}
 
@@ -47,6 +48,17 @@ export class TaskService {
     let options = new RequestOptions({ headers: headers });
 
     return this._http.post(url, task, options)
+      .map((response: Response) => <any> response.json())
+      .catch(this._handleError);
+  }
+  
+  assignTask(userID: string, taskID: string): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    const query = `${this._jobUrl}?assignee_id=${userID}&job_id=${taskID}`;
+
+    return this._http.post(query)
       .map((response: Response) => <any> response.json())
       .catch(this._handleError);
   }

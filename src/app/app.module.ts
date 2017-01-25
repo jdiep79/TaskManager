@@ -12,6 +12,7 @@ import { UpdateTaskComponent } from './components/shared/update-task/update-task
 
 import { AllUsersComponent } from './components/pages/all-users/all-users.component';
 import { AddUserComponent } from './components/shared/add-user/add-user.component';
+import { AssignTaskComponent } from './components/shared/assign-task/assign-task.component';
 
 import { TaskStatusFilterPipe } from './pipes/task-status-filter.pipe';
 import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
@@ -28,6 +29,7 @@ import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
       { path: 'addtask', component: AddTaskComponent },
       { path: 'task/:id', component: UpdateTaskComponent },
       { path: 'allusers', component: AllUsersComponent },
+      { path: 'allusers/:id', component: AssignTaskComponent },
       { path: 'adduser', component: AddUserComponent },
       { path: '', redirectTo: 'mytask', pathMatch: 'full'},
       { path: '**', redirectTo: 'mytask', pathMatch: 'full' }
@@ -41,6 +43,7 @@ import { NewLineFilterPipe } from './pipes/newline-filter.pipe';
     UpdateTaskComponent,
     AllUsersComponent,
     AddUserComponent,
+    AssignTaskComponent,
     TaskStatusFilterPipe,
     NewLineFilterPipe,
   ],

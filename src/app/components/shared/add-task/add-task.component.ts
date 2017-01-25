@@ -37,16 +37,16 @@ export class AddTaskComponent implements OnInit {
       );
   }
   
+  goBackToPreviousPage(): void {
+    this._location.back();
+  }
+  
   private _onSaveComplete(message: any): void {
     console.log(message);
     this.taskForm.reset();
     this.goBackToPreviousPage();
   }
-  
-  goBackToPreviousPage(): void {
-    this._location.back();
-  }
-  
+
   private _createForm(): void {
    this.taskForm = this._fb.group({
      summary: '',
